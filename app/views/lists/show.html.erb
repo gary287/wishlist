@@ -10,5 +10,20 @@
   <%= @list.shared_id %>
 </p>
 
+<h2>Items</h2>
+<% for item in @list.items %>
+    <ul>
+      <li>
+      <% if item.url.blank? %>
+        <%= item.title %>
+      <% else %>
+        <a href="<%= item.url %>"><%= item.title %></a>
+      <% end %>
+      <%= 'Not' if !item.purchased %> Purchased
+      </li>
+  </ul>
+<% end %>
+
 <%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Add Item', list_items_path(@list) %> |
 <%= link_to 'Back', lists_path %>

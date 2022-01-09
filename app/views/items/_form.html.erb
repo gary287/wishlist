@@ -1,4 +1,4 @@
-<%= form_with(model: item) do |form| %>
+<%= form_with(model: [@list, item]) do |form| %>
   <% if item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -24,11 +24,6 @@
   <div class="field">
     <%= form.label :purchased %>
     <%= form.check_box :purchased %>
-  </div>
-
-  <div class="field">
-    <%= form.label :list_id %>
-    <%= form.text_field :list_id %>
   </div>
 
   <div class="actions">
