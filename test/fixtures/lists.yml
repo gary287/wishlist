@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  shared_id: 8956fe35-c18e-431a-b2af-fbe8b98ddc5b
+
+two:
+  title: MyString
+  shared_id: d704eb1e-0dc8-4290-94b6-cbd032e415cf
