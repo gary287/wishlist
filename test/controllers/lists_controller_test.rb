@@ -22,7 +22,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
       post lists_url, params: { list: { shared_id: @list.shared_id, title: @list.title } }
     end
 
-    assert_redirected_to list_url(List.last)
+    assert_redirected_to list_url(List.order('lists.created_at DESC').first)
   end
 
   test 'should show list' do
