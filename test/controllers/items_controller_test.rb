@@ -21,7 +21,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
            params: { item: { list_id: @item.list_id, purchased: @item.purchased, title: @item.title, url: @item.url } }
     end
 
-    assert_redirected_to item_url(Item.last)
+    assert_redirected_to item_url(Item.order('items.created_at DESC').first)
   end
 
   test 'should show item' do
