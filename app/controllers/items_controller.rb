@@ -1,14 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_list
-  before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_item, only: %i[edit update destroy]
 
   # GET /items or /items.json
   def index
     @items = @list.items
   end
-
-  # GET /items/1 or /items/1.json
-  def show; end
 
   # GET /items/new
   def new
@@ -25,7 +22,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         format.html { redirect_to list_items_path(@list), notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
+        format.json { render :index, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -38,7 +35,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to list_items_path(@list), notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
+        format.json { render :index, status: :ok, location: @item }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @item.errors, status: :unprocessable_entity }

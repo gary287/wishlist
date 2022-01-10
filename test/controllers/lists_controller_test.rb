@@ -27,8 +27,9 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show list' do
-    get list_url(@list)
-    assert_response :success
+    assert_raise ActionController::RoutingError do
+      get list_url(@list)
+    end
   end
 
   test 'should get edit' do

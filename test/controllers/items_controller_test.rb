@@ -25,9 +25,10 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to list_items_url(@list)
   end
 
-  test 'should show item' do
-    get list_item_url(@list, @item)
-    assert_response :success
+  test 'should not show item' do
+    assert_raise ActionController::RoutingError do
+      get list_item_url(@list, @item)
+    end
   end
 
   test 'should get edit' do
