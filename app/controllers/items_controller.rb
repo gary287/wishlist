@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         format.html { redirect_to list_items_path(@list), notice: 'Item was successfully created.' }
-        format.json { render :index, status: :created, location: @item }
+        format.json { render partial: 'items/index.json', status: :created, location: list_items_path(@list) }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to list_items_path(@list), notice: 'Item was successfully updated.' }
-        format.json { render :index, status: :ok, location: @item }
+        format.json { render partial: 'items/index.json', status: :ok, location: list_items_path(@list) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @item.errors, status: :unprocessable_entity }
