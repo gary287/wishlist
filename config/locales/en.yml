@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+en:
+  :true: 'Yes'
+  :false: 'No'
