@@ -26,7 +26,7 @@ class ItemsTest < ApplicationSystemTestCase
 
   test 'updating a Item' do
     visit list_items_url(@list)
-    click_on 'Edit', match: :first
+    click_on 'Edit Item', match: :first
 
     check 'Purchased' if @item.purchased
     fill_in 'Title', with: @item.title
@@ -40,7 +40,7 @@ class ItemsTest < ApplicationSystemTestCase
   test 'destroying a Item' do
     visit list_items_url(@list)
     page.accept_confirm do
-      click_on 'Destroy', match: :first
+      click_on 'Destroy Item', match: :first
     end
 
     assert_text 'Item was successfully destroyed'

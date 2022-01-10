@@ -23,7 +23,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
       post lists_url, params: { list: { shared_id: @list.shared_id, title: @list.title } }
     end
 
-    assert_redirected_to list_url(List.order('lists.created_at DESC').first)
+    assert_redirected_to list_items_url(List.order('lists.created_at DESC').first)
   end
 
   test 'should show list' do
@@ -38,7 +38,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update list' do
     patch list_url(@list), params: { list: { shared_id: @list.shared_id, title: @list.title } }
-    assert_redirected_to list_url(@list)
+    assert_redirected_to list_items_url(@list)
   end
 
   test 'should destroy list' do
@@ -46,6 +46,6 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
       delete list_url(@list)
     end
 
-    assert_redirected_to lists_url
+    assert_redirected_to new_list_url
   end
 end
