@@ -2,7 +2,7 @@
 
 <h1><%= @list.title %></h1>
 <p>Bookmark this page so you can come back and make changes. Anyone you share this page with can make changes too.</p>
-<p>To let others mark items purchased, share this link with them <%= @list.shared_id %>.</p>
+<p>To let others mark items purchased, share this link with them <%= link_to shared_items_url(@list.shared_id), shared_items_url(@list.shared_id) %>.</p>
 <%= link_to 'Edit List', edit_list_path(@list) %>
 <%= link_to 'Destroy List', @list, method: :delete, data: { confirm: 'Are you sure?' } %>
 

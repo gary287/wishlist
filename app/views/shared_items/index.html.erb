@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @list.title %></h1>
+<p>Someone has shared this list with you. If you plan to buy an item, mark it purchased.</p>
+
+<h1>Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Purchased</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= link_to item.url, item.url %></td>
+        <td><%= humanize_boolean(item.purchased) %></td>
+        <td><%= link_to 'Mark Purchased', purchase_shared_item_url(@list.shared_id, item.id), method: :patch, data: { confirm: "Are you sure?\n\nIf you decide not to purchase the item you will need to contact the person who shared the list with you so they can mark it not purchased." } if !item.purchased %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
