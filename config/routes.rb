@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'lists#new'
   resources :lists, except: :index do
     resources :items
   end
