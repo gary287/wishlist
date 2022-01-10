@@ -24,7 +24,6 @@
         <td><%= item.url %></td>
         <td><%= item.purchased %></td>
         <td><%= item.list.title %></td>
-        <td><%= link_to 'Show List', [@list] %></td>
         <td><%= link_to 'Edit Item', edit_list_item_path(@list, item) %></td>
         <td><%= link_to 'Destroy Item', [@list, item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
