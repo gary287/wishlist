@@ -1,6 +1,6 @@
 # Wishlist
 
-![Heroku](https://pyheroku-badge.herokuapp.com/?app=gary287-wishlist&style=flat)
+[![Heroku](https://pyheroku-badge.herokuapp.com/?app=gary287-wishlist&style=flat)](https://gary287-wishlist.herokuapp.com/)
 
 
 A wishlist app that allows users to create wishlists and share them so others can purchase the items on the lists.
