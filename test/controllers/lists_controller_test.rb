@@ -8,8 +8,9 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get lists_url
-    assert_response :success
+    assert_raise ActionController::RoutingError do
+      get lists_url
+    end
   end
 
   test 'should get new' do
