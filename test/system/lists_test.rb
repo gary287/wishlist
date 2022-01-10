@@ -12,7 +12,7 @@ class ListsTest < ApplicationSystemTestCase
     click_on 'Create List'
 
     assert_text 'List was successfully created'
-    assert_selector 'h1', text: 'Items'
+    assert_selector 'h2', text: 'Items'
   end
 
   test 'updating a List' do
@@ -23,7 +23,7 @@ class ListsTest < ApplicationSystemTestCase
     click_on 'Update List'
 
     assert_text 'List was successfully updated'
-    assert_selector 'h1', text: 'Items'
+    assert_selector 'h2', text: 'Items'
   end
 
   test 'destroying a List' do
@@ -33,6 +33,6 @@ class ListsTest < ApplicationSystemTestCase
     end
 
     assert_text 'List was successfully destroyed'
-    assert_selector 'h1', text: 'New List'
+    assert_selector 'h2', text: 'New List'
   end
 end

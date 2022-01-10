@@ -8,7 +8,7 @@ class ItemsTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit list_items_url(@list)
-    assert_selector 'h1', text: 'Items'
+    assert_selector 'h2', text: 'Items'
   end
 
   test 'creating a Item' do
@@ -21,7 +21,7 @@ class ItemsTest < ApplicationSystemTestCase
     click_on 'Create Item'
 
     assert_text 'Item was successfully created'
-    assert_selector 'h1', text: 'Items'
+    assert_selector 'h2', text: 'Items'
   end
 
   test 'updating a Item' do
@@ -34,7 +34,7 @@ class ItemsTest < ApplicationSystemTestCase
     click_on 'Update Item'
 
     assert_text 'Item was successfully updated'
-    assert_selector 'h1', text: 'Items'
+    assert_selector 'h2', text: 'Items'
   end
 
   test 'destroying a Item' do
@@ -44,6 +44,6 @@ class ItemsTest < ApplicationSystemTestCase
     end
 
     assert_text 'Item was successfully destroyed'
-    assert_selector 'h1', text: 'Items'
+    assert_selector 'h2', text: 'Items'
   end
 end
