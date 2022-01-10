@@ -26,7 +26,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to list_items_url(List.order('lists.created_at DESC').first)
   end
 
-  test 'should show list' do
+  test 'should not show list' do
     assert_raise ActionController::RoutingError do
       get list_url(@list)
     end
