@@ -33,6 +33,6 @@ class ListsTest < ApplicationSystemTestCase
     end
 
     assert_text 'List was successfully destroyed'
-    assert_selector 'h2', text: 'New List'
+    assert_selector 'h1', text: 'New List'
   end
 end
