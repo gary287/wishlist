@@ -1,28 +1,31 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @list.title %>
+  <%= link_to new_list_path, class: 'btn btn-outline-primary', title: 'New List' do %>
+    <i class="bi bi-plus-square"></i>
+  <% end %>
+</h1>
 
-<h1><%= @list.title %></h1>
 <p>Someone has shared this list with you. If you plan to buy an item, mark it purchased.</p>
 
 <h2>Items</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th>Purchased</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= link_to item.url, item.url %></td>
-        <td><%= humanize_boolean(item.purchased) %></td>
-        <td><%= link_to 'Mark Purchased', purchase_shared_item_url(@list.shared_id, item.id), method: :patch, data: { confirm: "Are you sure?\n\nIf you decide not to purchase the item you will need to contact the person who shared the list with you so they can mark it not purchased." } if !item.purchased %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ol class="list-group list-group-numbered">
+<% @items.each do |item| %>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">
+        <% if item.purchased %><del><% end %>
+        <%= item.title %>
+        <% if item.purchased %></del><% end %>
+      </div>
+      <% if !item.purchased? %>
+        <%= link_to purchase_shared_item_url(@list.shared_id, item.id), method: :patch, data: { confirm: "Are you sure?\n\nIf you decide not to purchase the item you will need to contact the person who shared the list with you so they can mark it not purchased." }, class: 'btn btn-outline-primary', title: 'Mark Purchased' do %>
+          <i class="bi bi-bag"></i>
+        <% end %>
+      <% end %>
+      <% if !item.url.blank? %>
+        <a href="<%= item.url %>" class="btn btn-outline-secondary" title="View Item"><i class="bi bi-box-arrow-up-right"></i></a>
+      <% end %>
+    </div>    
+  </li>
+<% end %>
+</ol>
