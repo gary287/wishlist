@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = @list.items
+    @items = @list.items.order('items.created_at')
   end
 
   # GET /items/new
