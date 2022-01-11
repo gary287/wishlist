@@ -29,7 +29,7 @@ class ListsTest < ApplicationSystemTestCase
   test 'destroying a List' do
     visit list_items_url(@list)
     page.accept_confirm do
-      click_on 'Destroy List', match: :first
+      click_on 'Delete List', match: :first
     end
 
     assert_text 'List was successfully destroyed'

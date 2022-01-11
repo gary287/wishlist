@@ -40,7 +40,7 @@ class ItemsTest < ApplicationSystemTestCase
   test 'destroying a Item' do
     visit list_items_url(@list)
     page.accept_confirm do
-      click_on 'Destroy Item', match: :first
+      click_on 'Delete Item', match: :first
     end
 
     assert_text 'Item was successfully destroyed'
