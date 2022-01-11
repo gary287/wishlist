@@ -29,14 +29,14 @@
         <%= item.title %>
         <% if item.purchased %></del><% end %>
       </div>
-      <% if !item.url.blank? %>
-        <a href="<%= item.url %>" class="btn btn-outline-secondary" title="Go to item URL"><i class="bi bi-box-arrow-up-right"></i></a>
-      <% end %>
       <%= link_to edit_list_item_path(@list, item), class: 'btn btn-outline-primary', title: 'Edit Item' do %>
         <i class="bi bi-pencil"></i>
       <% end %>
       <%= link_to([@list, item], method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'btn btn-outline-danger', title: 'Delete Item') do %>
         <i class="bi bi-trash"></i>
+      <% end %>
+      <% if !item.url.blank? %>
+        <a href="<%= item.url %>" class="btn btn-outline-secondary" title="Go to item URL"><i class="bi bi-box-arrow-up-right"></i></a>
       <% end %>
     </div>    
   </li>
