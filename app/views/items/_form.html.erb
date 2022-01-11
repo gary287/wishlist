@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
+  <div class="mb-3">
+    <%= form.label :url, class: 'form-label' %>
+    <%= form.text_field :url, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :purchased %>
-    <%= form.check_box :purchased %>
+  <div class="mb-3">
+    <%= form.check_box :purchased, class: 'form-check-input' %>
+    <%= form.label :purchased, class: 'form-label' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit nil, class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', list_items_path(item.list_id), class: 'btn btn-secondary' %>
 <% end %>
