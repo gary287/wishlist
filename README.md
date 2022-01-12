@@ -4,7 +4,7 @@
 
 A wishlist app that allows users to create wishlists and share them so others can purchase the items on the lists.
 
-Here is my [Bucket List](https://gary287-wishlist.herokuapp.com/lists/c6c01122-dd17-467f-8aea-639026f49c4f/items).
+You can see my [Bucket List](https://gary287-wishlist.herokuapp.com/lists/shared/b5c3fd7c-1f2b-4d90-810b-5725e0e2ec7b/items) or [Create a List](https://gary287-wishlist.herokuapp.com/) for yourself.
 
 * Ruby version: 3.0.3
 
