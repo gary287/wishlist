@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  url: MyString
+  url: http://MyString
   purchased: false
   list: one
 
 two:
   title: MyString
-  url: MyString
+  url: https://MyString
   purchased: false
   list: two
