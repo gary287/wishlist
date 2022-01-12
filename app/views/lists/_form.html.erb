@@ -1,6 +1,6 @@
 <%= form_with(model: list) do |form| %>
   <% if list.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
 
       <ul>
