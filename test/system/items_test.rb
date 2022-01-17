@@ -17,7 +17,7 @@ class ItemsTest < ApplicationSystemTestCase
 
     check 'Purchased' if @item.purchased
     fill_in 'Title', with: @item.title
-    fill_in 'Url', with: @item.url
+    fill_in 'URL', with: @item.url
     click_on 'Create Item'
 
     assert_text 'Item was successfully created'
@@ -30,7 +30,7 @@ class ItemsTest < ApplicationSystemTestCase
 
     check 'Purchased' if @item.purchased
     fill_in 'Title', with: @item.title
-    fill_in 'Url', with: @item.url
+    fill_in 'URL', with: @item.url
     click_on 'Update Item'
 
     assert_text 'Item was successfully updated'
